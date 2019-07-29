@@ -4,7 +4,7 @@ class TasksController < ApplicationController
     
     def index
         if logged_in?
-          @tasks = Task.all
+          @tasks = current_user.tasks
         else
           redirect_to login_url
         end
